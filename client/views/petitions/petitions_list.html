@@ -1,6 +1,6 @@
 <template name="petitionsList">
   <div class="application-content">
-    <div class="text-center" style="color:black;">
+    <div class="text-center">
       <h2>Open Petitions</h2>
       <h4>Petitions that haven't been recognized or resolved.</h4>
     </div>
@@ -52,16 +52,18 @@
       <div class="row">
         {{#unless pending}}
         <div class="col-md-3 col-sm-12">
-          <div class="col-md-12">
+          <div class=" searchOptions col-md-12">
             <h4 class="text-center"><strong>Sort</strong></h4>
-            <select id="petition-order" class="form-control input-lg">
-              {{#if equal title "Responded"}}
-              <option {{selected petitionOrder "responded_at"}} value="responded_at">Most Recent Responded</option>
-              {{/if}}
-              <option {{selected petitionOrder "submitted"}} value="submitted">Most Recent Submitted</option>
-              <option {{selected petitionOrder "lastSignedAt"}} value="lastSignedAt">Last Signed</option>
-              <option {{selected petitionOrder "votes"}} value="votes">Most Signatures</option>
-            </select>
+                <div id="petition-order-container">
+                <select id="petition-order" class="form-control input-lg">
+                  {{#if equal title "Responded"}}
+                  <option {{selected petitionOrder "responded_at"}} value="responded_at">Most Recent Responded</option>
+                  {{/if}}
+                  <option {{selected petitionOrder "submitted"}} value="submitted">Most Recent Submitted</option>
+                  <option {{selected petitionOrder "lastSignedAt"}} value="lastSignedAt">Last Signed</option>
+                  <option {{selected petitionOrder "votes"}} value="votes">Most Signatures</option>
+                </select>
+                </div>
             <h4 class="text-center hidden-xs hidden-sm"><strong>Filter</strong></h4>
             {{# if loggedIn}}
               <div class="filter-checkboxes">
@@ -79,9 +81,9 @@
             {{/if}}
             <div class="tag-box hidden-xs hidden-sm" id="tag-select">
               <div class="list-group">
-                <a id="all" class="list-group-item {{ isActiveTag 'all' }} tag-item" href="">All</a>
+                <a id="all" class="tag-list-item {{ isActiveTag 'all' }} tag-item" href="">All</a>
                 {{#each this.tags}}
-                <a id="{{this.name}}" class="list-group-item {{ isActiveTag this.name }} tag-item" href="">{{this.name}}</a>
+                <a id="{{this.name}}" class="tag-list-item {{ isActiveTag this.name }} tag-item" href="">{{this.name}}</a>
                 {{/each}}
               </div>
             </div>
