@@ -2,7 +2,7 @@
   <div class="application-content">
     <div class="text-center">
       <h2>Open Petitions</h2>
-      <h4>Petitions that haven't been recognized or resolved.</h4>
+      <h4>Petitions that haven't yet been recognized.</h4>
     </div>
     {{> petitionGroup petitions=petitions
                       petitionOrder=petitionOrder
@@ -26,9 +26,9 @@
     {{> petitionGroup petitions=petitions
                       petitionOrder=petitionOrder
                       title="Recognized"
-                      description="These petitions are currently being worked on. Status updates may be available on the petition page."
+                      description="These petitions are waiting for responses. Status updates may be available on the petition page."
                       tags=tags
-                      nopetitions="No petitions are currently in progress."
+                      nopetitions="No petitions are currently waiting for responses."
                       displayheader=true }}
 </template>
 
@@ -36,9 +36,9 @@
     {{> petitionGroup petitions=petitions
                       petitionOrder=petitionOrder
                       title="Responded"
-                      description="These petitions have received responses."
+                      description="These petitions have received responses from DSG."
                       tags=tags
-                      nopetitions="No petitions have received responses."
+                      nopetitions="No petitions have received responses DSG."
                       displayheader=true}}
 </template>
 
