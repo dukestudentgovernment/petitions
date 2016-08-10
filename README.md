@@ -1,4 +1,4 @@
-![Homepage](../screenshots/screenshots/homepage.png?raw=true "Home Page")
+![Homepage](https://github.com/dukestudentgovernment/petitions/blob/develop/Screen%20Shot.jpg "Home Page")
 
 About
 =====
